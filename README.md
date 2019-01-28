@@ -10,13 +10,14 @@ System that records changes to a file or set of files over times so taht you can
   Old VCS store each version of the file as patch sets.
  <p>
   
- <p>
   1. Local version controls
+  
   2. Centrailzed Version Control Systems
-  Centralized Version Control Systems as CVS, Subversion have a single server that contains all the versioned files 
+  
+  ...Centralized Version Control Systems as CVS, Subversion have a single server that contains all the versioned files 
   Advantages:
-  ..*Everyone knows what everyone is doing
-  ..*Admin can restrict write/read privleges
+   *Everyone knows what everyone is doing
+   *Admin can restrict write/read privleges
   
   Disadvantages:
   ..*Single point of failure (Server is down)
