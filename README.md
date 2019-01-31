@@ -28,7 +28,7 @@ Pro Git Apress Book
   > Git stores snapshots(the whole filesytem) of the project over time.
  * Every change is local. Git works as local file system.
  * Every change has checksum SHA-1 hash - integrity and security. Git stores these checksums in DB - hash of info in the file.
- * Git only adds data. It is almost impossible to delete something.
+ > Git only adds data. It is almost impossible to delete something.
  ###### Which are the tree states of a file under git?
 * Commited - Saved in your local db (.git directory)
 * Modified - Changed but not saved
@@ -44,6 +44,40 @@ Pro Git Apress Book
    ```git config --global user.name "Jhon"```
   ```git config --global user.email "Email"```
   ```git config --list```
+###### How to get a repo?
+* ```git init``` - creates .git folder, git repository skeleton
+* ```git clone``` - copy all the repo, all the history, every version of every file. *ALL*.This also checkout latest version of the working files
+     `git clone some_repo myDir` - this will clone the repo and name its folder myDir
+###### How to track files?
+* `git add file` - Now file is listed as ```changes to be commited``` after that command if you change the file it will appear as both```changes to be commited``` and ```modified```, so you must add it again
+> git add saves the file as it is. It does not track further changes
+###### Is there short command for status?
+* ```git status -s``` - this shows files as M - modified, A - staged, ?? - not added
+###### How to ignore files?
+* Add file .gitignore
+ `cat .gitignore`
+> Uses glob patterns
+````
+* - matches 0 or more chars
+ ? - matches one char
+[a,b,c] -matches any of that chars
+[a-z] - matches range
+** - nested directory. Example: dirA/**/dirB - matches dirA/a/b/dirB or dirA/b/dirB
+*.[a,o] - ignore any files ending in .a, .o
+*~ - ignore files ending with tilda
+# - comment (ignore that line)
+dirA/  - ignore all at directory dirA
+! - do not ignore that file. Example: You have *.a but then you add !b.a (File b.a will be tracked)
+/dirA - ignore root dirA folder, but do not ignore a/b/dirA folders
+doc/*.txt - ignore files doc/a.txt, but do not ignore doc/test/file.txt
+doc/ - ignore all files in the doc directory
+````
+
+###### How to view your changes?
+
+
+
+
 
 
   
