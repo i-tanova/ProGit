@@ -85,6 +85,7 @@ doc/ - ignore all files in the doc directory
 `git commit -a -m "Message"`
 ###### How to remove change?
 * remove file from staging area
+`git rm` - removes the file from local dir and staging area
 
 
 
