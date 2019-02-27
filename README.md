@@ -5,7 +5,6 @@ Pro Git Apress Book
  ##### What is version control system?
 * System that records changes to a file or set of files over times so taht you can recall specific version later.
 ##### What variants they have?
- Old VCS store each version of the file as patch sets:
   1. Local version controls
   2. Centrailzed Version Control Systems
     Centralized Version Control Systems as CVS, Subversion have a single server that contains all the versioned files.
@@ -38,6 +37,8 @@ Pro Git Apress Book
 ##### First-time setup of Git
 
 ``` git config ``` - a tool that helps with configuration
+
+Files where configurations are stored:
 * etc/giconfig file - every user, all thir repos ```--system```
 * ~/gitconfig - your user ```--global```
 * .git/config - this git repo specific to this repo
@@ -49,7 +50,7 @@ Pro Git Apress Book
 * ```git clone``` - copy all the repo, all the history, every version of every file. *ALL*.This also checkout latest version of the working files
      `git clone some_repo myDir` - this will clone the repo and name its folder myDir
 ###### How to track files?
-* `git add file` - Now file is listed as ```changes to be commited``` after that command if you change the file it will appear as both```changes to be commited``` and ```modified```, so you must add it again
+* `git add file` - Now file is listed as ```changes to be commited``` after that command if you modify the file you must run git add again.
 > git add saves the file as it is. It does not track further changes
 ###### Is there short command for status?
 * ```git status -s``` - this shows files as M - modified, A - staged, ?? - not added
@@ -74,6 +75,18 @@ doc/ - ignore all files in the doc directory
 ````
 
 ###### How to view your changes?
+* What is changed and not staged `git diff` (no output if everything is staged). If something is staged and then changed - show difference between local and staged file
+* What are the changes that are staged `git diff --staged`
+###### How to commit your changes?
+> `git commit` commits only staged files
+* configure editor of comments (git config --global core.editor)
+* `git commit -v` shows diff result while commiting
+* `-a` option adds everything to staging area and commits (you skip git add part)
+`git commit -a -m "Message"`
+###### How to remove change?
+* remove file from staging area
+
+
 
 
 
