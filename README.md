@@ -84,8 +84,45 @@ doc/ - ignore all files in the doc directory
 * `-a` option adds everything to staging area and commits (you skip git add part)
 `git commit -a -m "Message"`
 ###### How to remove change?
-* remove file from staging area
+* remove file from staging area and local dir
 `git rm` - removes the file from local dir and staging area
+`git rm -f` - by force
+* remove file from staging area but not from local dir
+`git rm --cashed <file>`
+* Use file-glob pattern
+`git rm log/\*.log` - remove all from log dir that has .log extension
+`git rm \*.log` - all files that end with .log
+ ###### View comit history
+`git log` - most recent commits are first
+- author, date, commit message
+* see only differences between commits
+`git log -p -2` - see diffs only in last 2 commits. Very helpful for code review.
+`git log --stat` - only what files are changed
+* See log in different format
+`git log --pretty=oneline` 
+`git log --pretty=format:"%h - %an, %ar : %s"` - %h - hash, %an author name, %ar author date - relative (6 years ago), %s subject. Author - who originally wrote the work, commiter - who apply changes
+* See graph of merge history
+`git log --pretty=format: "%h %s" --graph`
+* Other options
+`-p --stat --shortstat --name-only --name-status -abbrev-commit --relative-date --graph --pretty`
+* Limit log output
+ `git log--since=2.weeks` Another options --until 
+* Filter by author 
+`git log --author`
+* Search specific words
+`--grep`
+* To use two filters at the same time
+ `--all` - otherwise filters result will not merge
+* Show only changes to specific code
+`--S` - only show commits that introduced a change to code that added/removed that string
+`git log --Sfunction_name`
+* Show only changes in specified files
+`git log --filename`
+
+
+
+
+
 
 
 
