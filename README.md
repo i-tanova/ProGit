@@ -118,6 +118,43 @@ doc/ - ignore all files in the doc directory
 `git log --Sfunction_name`
 * Show only changes in specified files
 `git log --filename`
+###### Undoing Things
+* Change commit
+`git commit -amend` - change your commit message if there is not staged changes. This commit replaces results of the first
+* Unstage a staged file
+`git reset HEAD <file>`
+* Remove changes to a file
+`git checkout --file` 
+> git checkout rewrites the file permanently. No way back
+##### Working with remotes
+ Repos hosted oh the Internet or network somewhere.
+* See names of your remotes
+`git remote` \ origin (lists shortnames)
+`git remote -v` \ origin https://github.com/repo url (lists url)
+`git remote show [shortname]` - more information for branches and tracking branches
+* Add remote repo
+`git remote add [shortname] [url]`
+* Fetch using shortname. Fetch someone else branch
+`git fetch [shortname]` - Now you will have master branch of shortname *new branch shortname/branchname. You can merge it in your branch
+* Git fetch and clone differences
+>fetch pulls the that and you have references to all branches in a repo. It does not merge changes to it!
+>clone adds the repo as orign
+> pull a branch = fetch & merge it
+* Push data
+`git push remotename branchname`
+* Remove and rename
+`git remote rename [old] [new]`
+`git remote rm [name]`
+##### Working with tags
+
+
+
+
+
+
+
+
+
 
 
 
